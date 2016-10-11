@@ -6,5 +6,6 @@
 
 <h3>Progress</h3>
 <ul>
-	<li>check that your app renders "App is working!" text by http://localhost:8080 address</li>
+	<li>$ npm run test:watch</li>
+	<li>check that test by text acording was passed</li>
 </ul>
