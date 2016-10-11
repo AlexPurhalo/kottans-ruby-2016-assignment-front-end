@@ -6,7 +6,8 @@
 
 <h3>Progress</h3>
 <ul>
-	<li>visit http://localhost:8080</li>
-	<li>Pass some data to message and password fields and submit it</li>
-	<li>Check output in console with your message, password and encrypted string</li>
+	<li>visit https://self-destruction-kottans-2016.herokuapp.com/</li>
+	<li>create post request passing password and message for submitting</li>
+	<li>chek that request was successfully accepted from server</li>
+	<li>in response find information about message</li>
 </ul>
