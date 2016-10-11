@@ -8,5 +8,5 @@
 <ul>
 	<li>visit http://localhost:8080</li>
 	<li>enter data to password and message fields and checkout console output</li>
-	<li>as output you should get object with message and password keys values that you've entered</li>
+	<li>as output you should get passed to fields data</li>
 </ul>

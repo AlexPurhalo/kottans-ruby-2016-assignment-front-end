@@ -1,8 +1,12 @@
 // Node modules import
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+// Actions import
+import { createMessage } from '../actions/messages';
 
 // Form for new message creating
-export default class NewMessage extends Component {
+class NewMessage extends Component {
 	constructor() {
 		super();
 
@@ -23,7 +27,7 @@ export default class NewMessage extends Component {
 
 	onSubmitMessage(e) {
 		e.preventDefault();
-		console.log({ message: this.state.message, password: this.state.password });
+		this.props.createMessage(this.state.message, this.state.password);
 	}
 
 	render() {
@@ -55,3 +59,5 @@ export default class NewMessage extends Component {
 		);
 	}
 }
+
+export default connect(null, { createMessage })(NewMessage);
