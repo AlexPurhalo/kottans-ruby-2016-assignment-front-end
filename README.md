@@ -6,5 +6,5 @@
 
 <h3>Progress</h3>
 <ul>
-	<li>visit http://localhost:8080 and ensure that you see text from NewMessage component</li>	
+	<li>visit http://localhost:8080 and checkout form for message creating</li>	
 </ul>
