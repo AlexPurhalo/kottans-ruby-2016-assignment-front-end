@@ -6,6 +6,5 @@
 
 <h3>Progress</h3>
 <ul>
-	<li>$ npm run test:watch</li>
-	<li>check that test by text acording was passed</li>
+	<li>visit http://localhost:8080 and ensure that you see text from App component that now nested in routes</li>	
 </ul>
