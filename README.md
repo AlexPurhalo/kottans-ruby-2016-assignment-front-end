@@ -7,6 +7,6 @@
 <h3>Progress</h3>
 <ul>
 	<li>visit http://localhost:8080</li>
-	<li>enter data to password and message fields and checkout console output</li>
-	<li>as output you should get passed to fields data</li>
+	<li>Pass some data to message and password fields and submit it</li>
+	<li>Check output in console with your message, password and encrypted string</li>
 </ul>
