@@ -1,0 +1,12 @@
+{
+	"name": "kottans-ruby-2016-assignment-front-end",
+	"version": "1.0.0",
+	"description": "Application with messages self-destroy ability",
+	"main": "index.js",
+	"repository": "git@github.com:AlexPurhalo/kottans-ruby-2016-assignment-front-end.git",
+	"scripts": {},
+	"author": "Alex Purhalo",
+	"license": "",
+	"devDependencies": "",
+	"dependencies": ""
+}
