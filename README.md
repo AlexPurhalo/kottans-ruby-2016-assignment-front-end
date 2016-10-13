@@ -6,7 +6,8 @@
 
 <h3>Progress</h3>
 <ul>
-	<li>visit https://self-destruction-kottans-2016.herokuapp.com/</li>
-	<li>try to submit empty data and you gonna get error</li>
-	<li>submit not empty data and form should be submitted</li>
+	<li>visit http://localhost:8080/ </li>
+	<li>checkout section for destroy options adding</li>
+	<li>pass visits and exist hours counts verify that it sucessfully saves on server</li>
+	<li>to test it go to page of single message and ensure that console's output provides message's additional data</li>
 </ul>

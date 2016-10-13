@@ -9,12 +9,13 @@ import { CREATE_MESSAGE, FETCH_MESSAGE } from './types';
 const ROOT_URL  = 'https://kottands-ruby-2016-back.herokuapp.com';
 
 // Sends request to create a new message, then fetches data from response about created record
-export function createMessage(message, password) {
+export function createMessage(message, password, visitsCount, existHours) {
 	return function(dispatch) {
 		let encryptedString = CryptoJS.AES.encrypt(message, password).toString();
-
 		const data = {
-			body: encryptedString
+			body: encryptedString,
+			visits_limit: visitsCount,
+			exist_hours: existHours
 		};
 
 		axios.post(`${ROOT_URL}/messages/`, data )
