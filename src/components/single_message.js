@@ -1,6 +1,7 @@
 // Node modules import
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import CryptoJS from "crypto-js";
 
 // Actions import
 import { readMessage } from '../actions/messages';
@@ -13,9 +14,15 @@ class SingleMessage extends Component {
 
 	render() {
 		return (
-			<div>Here is single message page</div>
+			<div>
+				{this.props.message.body}
+			</div>
 		);
 	}
 }
 
-export default connect(null, { readMessage })(SingleMessage);
+function mapStateToProps(state) {
+	return { message: state.messages.message_to_read }
+}
+
+export default connect(mapStateToProps, { readMessage })(SingleMessage);

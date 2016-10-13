@@ -83,7 +83,7 @@ class NewMessage extends Component {
 }
 
 function mapStateToProps(state) {
-	return { message: state.messages.single_message };
+	return { message: state.messages.created_message };
 }
 
 export default connect(mapStateToProps, { createMessage })(NewMessage);

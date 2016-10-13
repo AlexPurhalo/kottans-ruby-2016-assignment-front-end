@@ -1,4 +1,5 @@
 export const INITIAL_STATE = {
-	single_message: {}
+	created_message: { link: 'wait...'},
+	message_to_read: { link: 'wait...', body: 'wait...' }
 };
 

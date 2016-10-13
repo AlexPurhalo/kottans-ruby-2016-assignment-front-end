@@ -3,7 +3,7 @@ import axios from 'axios';
 import CryptoJS from "crypto-js";
 
 // Action types import
-import { CREATE_MESSAGE } from './types';
+import { CREATE_MESSAGE, FETCH_MESSAGE } from './types';
 
 // Url for requests manipulation
 const ROOT_URL  = 'https://kottands-ruby-2016-back.herokuapp.com';
@@ -29,10 +29,14 @@ export function createMessage(message, password) {
 
 // Shows data about single message
 export function readMessage(id) {
-	return function() {
+	return function(dispatch) {
 		axios.get(`${ROOT_URL}/messages/${id}`)
 			.then(response => {
 				console.log(response.data.message);
+				dispatch({
+					type: FETCH_MESSAGE,
+					payload: response.data.message
+				})
 			});
 	}
 }
