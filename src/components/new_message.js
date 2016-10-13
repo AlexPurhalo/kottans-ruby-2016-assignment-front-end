@@ -10,7 +10,11 @@ class NewMessage extends Component {
 	constructor() {
 		super();
 
-		this.state = { password: '', message: '' };
+		this.state = {
+			password: '',
+			message: '',
+			onCreate: true
+		};
 
 		this.onChangeMessage = this.onChangeMessage.bind(this);
 		this.onChangePassword = this.onChangePassword.bind(this);
@@ -28,36 +32,55 @@ class NewMessage extends Component {
 	onSubmitMessage(e) {
 		e.preventDefault();
 		this.props.createMessage(this.state.message, this.state.password);
+		this.setState({ onCreate: !this.state.onCreate })
+	}
+
+	createMessageForm() {
+		return (
+			<form onSubmit={this.onSubmitMessage}>
+				<label>Message</label>
+				<textarea
+					onChange={this.onChangeMessage}
+					value={this.state.message}
+					className="form-control"
+					placeholder="Enter your message here"/>
+				<br/>
+				<label>Password</label>
+				<input
+					onChange={this.onChangePassword}
+					value={this.state.password}
+					type="password"
+					className="form-control"
+					placeholder="Enter your password here"/>
+				<br/>
+				<button
+					type="submit"
+					className="btn btn-primary">
+					Submit
+				</button>
+			</form>
+		);
+	}
+
+
+	linkToCreatedMessage() {
+		return (
+			<div>
+				<p>Message was successfully created!</p>
+				<p>Here is your link: {this.props.message.link}</p>
+			</div>
+		);
 	}
 
 	render() {
 		return (
-			<div>
-				<form onSubmit={this.onSubmitMessage}>
-					<label>Message</label>
-					<textarea
-						onChange={this.onChangeMessage}
-						value={this.state.message}
-						className="form-control"
-						placeholder="Enter your message here"/>
-					<br/>
-					<label>Password</label>
-					<input
-						onChange={this.onChangePassword}
-						value={this.state.password}
-						type="password"
-						className="form-control"
-						placeholder="Enter your password here"/>
-					<br/>
-					<button
-						type="submit"
-						className="btn btn-primary">
-						Submit
-					</button>
-				</form>
-			</div>
+			<div>{this.state.onCreate ? this.createMessageForm() : this.linkToCreatedMessage()}</div>
 		);
 	}
 }
 
-export default connect(null, { createMessage })(NewMessage);
+function mapStateToProps(state) {
+	return { message: state.messages.single_message };
+}
+
+export default connect(mapStateToProps, { createMessage })(NewMessage);

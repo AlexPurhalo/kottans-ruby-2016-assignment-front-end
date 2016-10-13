@@ -8,5 +8,5 @@
 <ul>
 	<li>visit https://self-destruction-kottans-2016.herokuapp.com/</li>
 	<li>create post request passing password and message for submitting</li>
-	<li>checkout console with message's data fetchd from response</li>
+	<li>see that form got disappeared giving link to recently created message</li>
 </ul>
