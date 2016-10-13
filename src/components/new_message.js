@@ -14,7 +14,8 @@ class NewMessage extends Component {
 		this.state = {
 			password: '',
 			message: '',
-			onCreate: true
+			onCreate: true,
+			error: []
 		};
 
 		this.onChangeMessage = this.onChangeMessage.bind(this);
@@ -32,8 +33,13 @@ class NewMessage extends Component {
 
 	onSubmitMessage(e) {
 		e.preventDefault();
-		this.props.createMessage(this.state.message, this.state.password);
-		this.setState({ onCreate: !this.state.onCreate })
+		// if OR password OR message fields are empty don't allow to send data and shows an error
+		if (this.state.password && this.state.message) {
+			this.props.createMessage(this.state.message, this.state.password);
+			this.setState({ onCreate: !this.state.onCreate, error: '' });
+		} else {
+			this.setState({ error: 'fields can not be blank' });
+		}
 	}
 
 	createMessageForm() {
@@ -59,6 +65,8 @@ class NewMessage extends Component {
 					className="btn btn-primary">
 					Submit
 				</button>
+				<br/><br/>
+				<span>{this.state.error}</span>
 			</form>
 		);
 	}

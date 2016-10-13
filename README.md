@@ -7,10 +7,6 @@
 <h3>Progress</h3>
 <ul>
 	<li>visit https://self-destruction-kottans-2016.herokuapp.com/</li>
-	<li>create post request passing password and message for submitting</li>
-	<li>see that form got disappeared giving link to recently created message</li>
-	<li>follow by link and check that you in right place</li>
-	<li>check encrypted message by visited link</li>
-	<li>enter incorrect password and ensure that you see error</li>
-	<li>enter a correct password and ensure that your were shown decrypted message</li>
+	<li>try to submit empty data and you gonna get error</li>
+	<li>submit not empty data and form should be submitted</li>
 </ul>
