@@ -27,3 +27,12 @@ export function createMessage(message, password) {
 	}
 }
 
+// Shows data about single message
+export function readMessage(id) {
+	return function() {
+		axios.get(`${ROOT_URL}/messages/${id}`)
+			.then(response => {
+				console.log(response.data.message);
+			});
+	}
+}

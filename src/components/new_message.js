@@ -1,6 +1,7 @@
 // Node modules import
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
 // Actions import
 import { createMessage } from '../actions/messages';
@@ -62,12 +63,14 @@ class NewMessage extends Component {
 		);
 	}
 
-
 	linkToCreatedMessage() {
 		return (
 			<div>
 				<p>Message was successfully created!</p>
-				<p>Here is your link: {this.props.message.link}</p>
+				<p>
+					Here is your link:
+					<Link to={`messages/${this.props.message.link}`}>{this.props.message.link}</Link>
+				</p>
 			</div>
 		);
 	}
