@@ -49,14 +49,33 @@ class NewMessage extends Component {
 		let message 		=	this.state.message, 		password 	 = this.state.password,
 				visitsCount = this.state.visitsCount, existHours = this.state.existHours;
 
-		// if OR password OR message fields are empty don't allow to send data and shows an error
-		if (message && password) {
+		const errors = [], 																				// stocks the strings with error's text to array
+					regExpInt = /^\d+$/,	regExpFloat = /^-?\d*(\.\d+)?$/; 						 // holds regular expression
+
+
+		// if validation wasn't passed pushes error string to array
+		if (!message)																	errors.push("message can't be blank");
+		if (!password) 																errors.push("password can't be blank");
+
+		// if visits count param is present parses it to integer if it passed through validation
+		if (visitsCount) {
+			!regExpInt.test(visitsCount) ? errors.push('only numbers for visits limit field') : parseInt(visitsCount);
+		}
+
+		// if exist hours param is present and has a valid data, parses to float type
+		if (existHours) {
+			!regExpFloat.test(existHours) ? errors.push('only numbers for exist hours field') : parseFloat(existHours);
+		}
+
+		// if doesn't have any errors in errors array sends post request to create a new message
+		if (errors.length < 1) {
 			this.props.createMessage(message, password, visitsCount, existHours);
 			this.setState({ onCreate: !this.state.onCreate });
 		} else {
-			this.setState({errors: 'can not be blank'})
-		}
+			this.setState({errors: errors}); // if errors array is not empty changes state of global errors variable
+		}																																// passing there strings with errors texts
 	}
+
 	onClickDestroyOptions() {
 		this.setState({ destroyOptions: !this.state.destroyOptions })
 	}
@@ -90,7 +109,11 @@ class NewMessage extends Component {
 							Submit
 						</button>
 						<br/><br/>
-						<span>{this.state.errors[0]}</span>
+						<ul>
+							{this.state.errors.map(error => {
+								return <li key={error}>{error}</li>;
+							})}
+						</ul>
 					</div>
 					{this.state.destroyOptions ? this.openedDestroyOptions() : this.closedDestroyOptions()}
 				</div>
@@ -142,7 +165,7 @@ class NewMessage extends Component {
 					type="numbers"
 					onChange={this.onChangeExistHours}
 					className="form-control"
-					placeholder="Hours count"/>
+					placeholder="0.016 ~ one minute"/>
 				<br/>
 				<button
 					onClick={this.onClickDestroyOptions}

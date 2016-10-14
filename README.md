@@ -7,7 +7,8 @@
 <h3>Progress</h3>
 <ul>
 	<li>visit http://localhost:8080/ </li>
-	<li>checkout section for destroy options adding</li>
-	<li>pass visits and exist hours counts verify that it sucessfully saves on server</li>
-	<li>to test it go to page of single message and ensure that console's output provides message's additional data</li>
+	<li>try submit empty password and message</li>
+	<li>render: list with errors asks you to fill in fields before submit them</li>
+	<li>Go to destroy options and pass string as data to those fields</li>
+	<li>render: list says that data can be only numbers</li>
 </ul>
