@@ -47,10 +47,10 @@ class NewMessage extends Component {
 	onSubmitMessage(e) {
 		e.preventDefault();
 		let message 		=	this.state.message, 		password 	 = this.state.password,
-				visitsCount = this.state.visitsCount, existHours = this.state.existHours;
+			visitsCount = this.state.visitsCount, existHours = this.state.existHours;
 
 		const errors = [], 																				// stocks the strings with error's text to array
-					regExpInt = /^\d+$/,	regExpFloat = /^-?\d*(\.\d+)?$/; 						 // holds regular expression
+			regExpInt = /^\d+$/,	regExpFloat = /^-?\d*(\.\d+)?$/; 						 // holds regular expression
 
 
 		// if validation wasn't passed pushes error string to array
@@ -83,35 +83,32 @@ class NewMessage extends Component {
 	// JSX render
 	createMessageForm() {
 		return (
-			<form onSubmit={this.onSubmitMessage}>
+			<form onSubmit={this.onSubmitMessage} className="message-form">
 				<div className="row">
 					<div className="col-md-8">
-						<h3>Create your secret message</h3>
-						<label>Message</label>
 						<textarea
 							onChange={this.onChangeMessage}
 							value={this.state.message}
-							className="form-control"
-							placeholder="Enter your message here"/>
+							className="form-control message-textarea"
+							placeholder="Enter your text here"/>
 						<br/>
-						<label>Password</label>
 						<input
 							onChange={this.onChangePassword}
 							value={this.state.password}
 							type="password"
-							className="form-control"
-							placeholder="Enter your password here"/>
+							className="form-control message-password-input"
+							placeholder="Password"/>
 						<br/>
 						<button
 							onChange={this.onChangeExistHours}
 							type="submit"
-							className="btn btn-primary">
+							className="btn message-btn">
 							Submit
 						</button>
 						<br/><br/>
 						<ul>
 							{this.state.errors.map(error => {
-								return <li key={error}>{error}</li>;
+								return <li key={error} className="message-error">{error}</li>;
 							})}
 						</ul>
 					</div>
@@ -123,27 +120,35 @@ class NewMessage extends Component {
 
 	linkToCreatedMessage() {
 		return (
-			<div>
+			<div className="success-create-message">
 				<p>Message was successfully created!</p>
 				<p>
 					Here is your link:
 					<Link to={`messages/${this.props.message.link}`}>{this.props.message.link}</Link>
 				</p>
+				<span>
+					<p>
+						may, if you are waiting so long, this is Heroku fault,
+					ask administrator to restart server, skype: alexpurhalo
+					</p>
+					<p>
+						or try feature <a href="https://github.com/AlexPurhalo/kottans-ruby-2016-back">locally</a>,
+						sorry for this :(
+					</p>
+				</span>
 			</div>
 		);
 	}
 
 	closedDestroyOptions() {
 		return (
-			<div className="col-md-4">
-				<h3>Additional</h3>
-				<p>Destroy after certain visit?</p>
-				<img src="http://pics.livejournal.com/doink_the_clown/pic/00002y8q/s320x240" width="100px" height="120px"/>
-				<p>Or after some time?</p>
+			<div className="col-md-4 destroy-option-switch">
+				<img src="http://vignette1.wikia.nocookie.net/zimwiki/images/c/cd/Duty_Mode_GIR.png/revision/latest?cb=20121119034754" width="100px" height="120px"/>
+				<br/>
 				<button
 					onClick={this.onClickDestroyOptions}
 					type='reset'
-					className="btn btn-danger">
+					className="btn btn-danger switch-to-destroy-btn">
 					Destroy Options
 				</button>
 			</div>
@@ -154,23 +159,21 @@ class NewMessage extends Component {
 		return (
 			<div className="col-md-4">
 				<br/><br/>
-				<label>Visits Limit</label>
 				<input
 					type="numbers"
 					onChange={this.onChangeVisitsCount}
-					className="form-control"
-					placeholder="Visits count"/>
-				<label>Exist Hours</label>
+					className="form-control message-numbers-input"
+					placeholder="Visits Count"/>
 				<input
 					type="numbers"
 					onChange={this.onChangeExistHours}
-					className="form-control"
-					placeholder="0.016 ~ one minute"/>
+					className="form-control message-numbers-input"
+					placeholder="Exist Hours"/>
 				<br/>
 				<button
 					onClick={this.onClickDestroyOptions}
 					type="reset"
-					className="btn btn-primary pull-right">Close</button>
+					className="btn btn-default message-btn pull-right">Close</button>
 			</div>
 		);
 	}
