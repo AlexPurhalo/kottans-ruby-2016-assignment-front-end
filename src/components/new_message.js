@@ -175,10 +175,25 @@ class NewMessage extends Component {
 		);
 	}
 
+	banner() {
+		return (
+			<div className="banner-container">
+				<div className="banner">
+					<h1 className="banner-title">
+						<p>Kottans Ruby 2016</p>
+						<p>Slef-Destruction</p>
+					</h1>
+				</div>
+			</div>
+		);
+	}
 	render() {
 		return (
 			<div>
-				{this.state.onCreate ? this.createMessageForm() : this.linkToCreatedMessage()}
+				{this.banner()}
+				<div className="container">
+					{this.state.onCreate ? this.createMessageForm() : this.linkToCreatedMessage()}
+				</div>
 			</div>
 		);
 	}
