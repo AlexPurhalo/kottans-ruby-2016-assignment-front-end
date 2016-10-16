@@ -1,0 +1,44 @@
+.about-page {
+	background: white;
+	height: 1100px;
+
+}
+
+.about-section {
+	max-width: 600px;
+	padding: 2rem 0;
+	margin: 0 auto;
+	text-align: center;
+	color: black;
+}
+
+.about-title {
+	font-weight: 800;
+	font-size: 3rem;
+	letter-spacing: 7px;
+}
+
+.about-video-intro {
+	background: black;
+}
+
+.about-video-intro .about-video {
+	width: 640px;
+	height: 360px;
+}
+
+.about-technologies {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 2rem 0 2rem;
+}
+
+.technologies-list {
+	padding: 0 0;
+}
+
+.technology {
+	font-weight: 600;
+	font-size: 1.2rem;
+	margin: 0.8rem 0;
+}

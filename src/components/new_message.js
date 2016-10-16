@@ -184,7 +184,7 @@ class NewMessage extends Component {
 				<div className="banner">
 					<h1 className="banner-title">
 						<p>Kottans Ruby 2016</p>
-						<p>Slef-Destruction</p>
+						<p>Self Destruction</p>
 					</h1>
 				</div>
 			</div>
