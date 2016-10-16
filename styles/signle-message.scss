@@ -1,0 +1,49 @@
+.single-message-page {
+	background-image: url('https://hd.unsplash.com/35/HHEvkhEsQLaNDRkui4fg_fullsize.jpg');
+	background-size: cover;
+	background-position: center;
+	opacity: 0.95;
+	padding: 5rem 0;
+	height: 700px;
+	color: #F0F5C3;
+	font-weight: 600;
+}
+
+.single-message-form {
+	margin: 20rem 0 1rem;
+}
+
+.single-message-password-field {
+	max-width: 300px;
+	background: none;
+	border-radius: 0;
+	border: none;
+	border-bottom: solid white 1px;
+	font-size: 1.2rem;
+	letter-spacing: 2px;
+}
+
+.single-message-password-field::-webkit-input-placeholder {
+	color: #F0F5C3;
+}
+
+.single-message-password-field:focus {
+	outline: none;
+	background: none;
+	border-color: #d9534f;
+	color: #F0F5C3;
+}
+
+.single-message-password-btn {
+	border-radius: 0;
+	font-size: 1rem;
+	font-weight: 700;
+	background-color: #d9534f;
+	color: #F0F5C3;
+	margin: 0 1.5rem 0;
+	padding: 10px 20px;
+}
+
+.single-message-error {
+	color: #d9534f;
+}

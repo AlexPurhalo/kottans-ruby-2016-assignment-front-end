@@ -43,20 +43,19 @@ class SingleMessage extends Component {
 	}
 
 	messageRender() {
-		return <div>message: {this.decryptMessage(this.props.message.body, this.state.password)}</div>;
+		return <div>{this.decryptMessage(this.props.message.body, this.state.password)}</div>;
 	}
 
 	passwordFormRender() {
 		return (
-			<form onSubmit={this.handleSubmitPassword}>
-				<label>Password</label>
+			<form onSubmit={this.handleSubmitPassword} className="single-message-form form-inline">
 				<input onChange={this.handleChangePassword}
-					type="password"
-					className="form-control"
-					placeholder="Enter your password here"/>
+							 type="password"
+							 className="form-control single-message-password-field"
+							 placeholder="Message's password"/>
 				<button
 					type="submit"
-					className="btn btn-primary">
+					className="btn btn-default single-message-password-btn">
 					Submit
 				</button>
 			</form>
@@ -65,9 +64,11 @@ class SingleMessage extends Component {
 
 	render() {
 		return (
-			<div>
-				{this.state.showPassword ? this.messageRender() : this.passwordFormRender() }
-				{this.state.error ? (<span>Wrong Password</span>) : null}
+			<div className="single-message-page">
+				<div className="container">
+					{this.state.showPassword ? this.messageRender() : this.passwordFormRender() }
+					{this.state.error ? (<span className="single-message-error">Wrong Password</span>) : null}
+				</div>
 			</div>
 		);
 	}
