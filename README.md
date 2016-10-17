@@ -1,14 +1,27 @@
 <h3>Setup</h3>
 <ul>
 	<li>$ sudo npm install</li>
-  <li>$ npm run start</li>
+  <li>$ npm run dev</li>
+  <li>Use http://localhost:8080/ address</li>
 </ul>
 
-<h3>Progress</h3>
+<h3>Video</h3>
 <ul>
-	<li>visit http://localhost:8080/ </li>
-	<li>try submit empty password and message</li>
-	<li>render: list with errors asks you to fill in fields before submit them</li>
-	<li>Go to destroy options and pass string as data to those fields</li>
-	<li>render: list says that data can be only numbers</li>
+	<li>
+		<p>Here I describe how works my app</p>
+		<a href='https://www.youtube.com/embed/DGaTMws-6_Q'>youtube video</a>
+	</li>
+</ul>
+
+<h3>Heroku</h3>
+<ul>
+    <li>front-end: https://self-destruction-kottans-2016.herokuapp.com/</li>
+    <li>back-end: https://kottands-ruby-2016-back.herokuapp.com</li>
+    <li><img src="https://raw.githubusercontent.com/AlexPurhalo/kottans-ruby-2016-back/master/guide/how-it-looks.png"/></li>
+</ul>
+
+<h3>GitHub</h3>
+<ul>
+    <li>front-end source: https://github.com/AlexPurhalo/kottans-ruby-2016-assignment-front-end</li>
+    <li>back-end soruce: https://github.com/AlexPurhalo/kottans-ruby-2016-back</li>
 </ul>
