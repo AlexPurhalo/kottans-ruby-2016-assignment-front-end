@@ -67,6 +67,10 @@ class NewMessage extends Component {
 			!regExpFloat.test(existHours) ? errors.push('only numbers for exist hours field') : parseFloat(existHours);
 		}
 
+		// if message
+		if (message) {
+			message.length < 5 ? errors.push('minimum 5 characters in message field') : null
+		}
 		// if doesn't have any errors in errors array sends post request to create a new message
 		if (errors.length < 1) {
 			this.props.createMessage(message, password, visitsCount, existHours);
